@@ -3,8 +3,8 @@ module.exports = class LoadUserByEmailRepository {
     this.userModel = userModel
   }
 
-  load (email) {
-    const user = this.userModel.findOne({
+  async load (email) {
+    const user = await this.userModel.findOne({
       email
     }, {
       projection: {
